@@ -1,0 +1,12 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: todo-client-ingress
+spec:
+  rules:
+  - http:
+      paths:
+      - backend:
+          serviceName: todo-client-service
+          servicePort: 80
+        path: /
