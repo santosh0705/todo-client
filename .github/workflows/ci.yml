@@ -1,0 +1,23 @@
+name: CI
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: Run Build and Artifact Upload
+      run: |
+        echo 'Docker Login'
+        docker login -u $DOCKERHUB_USER -p $DOCKERHUB_KEY
+        echo 'Running Dcoker Image Build...'
+        docker image build -t $DOCKERHUB_REPO .
+        echo 'Pushing Docker Image...'
+        docker image push $DOCKERHUB_REPO
+        echo 'Done...'
