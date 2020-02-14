@@ -5,7 +5,7 @@ import './Header.css'
 export default function Header() {
     return (
         <MDBContainer className="header-main glow">
-            ToDo App
+            ToDo App - V1
         </MDBContainer>
     )
 }
