@@ -18,8 +18,8 @@ jobs:
         wget -q -O sonar-scanner-cli-linux.zip https://binaries.sonarsource.com/Distribution/sonar-scanner-cli/sonar-scanner-cli-${SONAR_SCANNER_VERSION}-linux.zip
         unzip sonar-scanner-cli-linux.zip
         rm sonar-scanner-cli-linux.zip
-        mv sonar-scanner-${SONAR_SCANNER_VERSION}-linux /opt/sonar-scanner
-        ln -s /opt/sonar-scanner/bin/sonar-scanner /usr/bin/sonar-scanner
+        sudo mv sonar-scanner-${SONAR_SCANNER_VERSION}-linux /opt/sonar-scanner
+        sudo ln -s /opt/sonar-scanner/bin/sonar-scanner /usr/bin/sonar-scanner
     - uses: actions/checkout@v2
     - name: Sonar Scanner
       run: sonar-scanner -v
