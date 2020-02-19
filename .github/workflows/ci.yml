@@ -15,7 +15,7 @@ jobs:
       env:
         SONAR_SCANNER_VERSION: 4.2.0.1873
       run: |
-        apt-get install -y node
+        sudo apt-get install -y node
         wget -q -O sonar-scanner-cli-linux.zip https://binaries.sonarsource.com/Distribution/sonar-scanner-cli/sonar-scanner-cli-${SONAR_SCANNER_VERSION}-linux.zip
         unzip sonar-scanner-cli-linux.zip
         rm sonar-scanner-cli-linux.zip
